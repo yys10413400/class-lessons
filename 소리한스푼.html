@@ -765,5 +765,27 @@ button:not(.creation):not(.ingredient):not(.step):not(:disabled):hover{backgroun
 .step,.beat-step{padding:0 7px!important}
 .step::before,.beat-step::before{top:50%!important}
 .lane-name{align-self:center;line-height:1}
+
+/* Warm, quiet controls that match the cream panels. */
+button:not(.creation):not(.ingredient):not(.step){background:#fffdf9!important;border-color:#ead5bb!important;color:#6b5040!important;box-shadow:0 1px 2px #8a5a3010!important}
+button:not(.creation):not(.ingredient):not(.step):not(:disabled):hover{background:#fdf4e9!important}
+.mode-bar button[aria-pressed=true],#mode-dessert[aria-pressed=true],#mode-drink[aria-pressed=true],.shelf nav button.active,header .header-actions button[aria-pressed=true],.play-controls #play{background:#fbe8d5!important;border-color:#e3b58e!important;color:#7a4a2c!important}
+.play-controls #stop{background:#f4ede6!important;border-color:#d8c6b4!important;color:#5f5047!important}
+#erase[style*="f4caa8"]{background:#f8dcc6!important;border-color:#dca27a!important}
+#title,.editing-toolbar{border-color:#ead5bb!important}#title{color:#6b5040!important}
+/* Ingredient boxes: plain rounded cards instead of the painted card art. */
+.ingredient::before{background:#fffdf9!important;border:1.5px solid #ecd9c2;border-radius:22px;filter:none!important;inset:2px!important}
+.ingredient.selected{outline:2.5px solid #e0ad84!important;outline-offset:-3px;border-radius:24px}
+.ingredient>span:not(.music-role),.ingredient:nth-child(even)>span:not(.music-role){background:#fbf5ec!important;border-color:#f0e2cf!important;color:#5e4637!important}
+/* Melody / rhythm: tell them apart with two quiet tones only. */
+.role-mark.melody{background:#fdf1e4!important;color:#8a5a3a!important;border-color:#ebcdb0!important}
+.role-mark.rhythm{background:#f2eef0!important;color:#665a63!important;border-color:#d8ccd3!important}
+.music-legend .melody b,.lane-name{color:#8a5a3a!important}
+.music-legend .rhythm b,.second-lane .lane-name{color:#665a63!important}
+.step::before{border-color:#ebd3bb!important}.beat-step::before{border-color:#ddd2d8!important;background-color:#fdfbfc!important}
+.shelf-heading,.music-legend>span,.auto-controls,.auto-controls strong,.audio-controls,.sound-settings,.arrange-controls,.editing-toolbar label{color:#6b5a4e!important}
+select{border-color:#e6d3be!important;color:#5e4637!important}
+input[type=range],input[type=checkbox]{accent-color:#c98d63!important}
+.brand{color:#7a5236!important}
 .editing-toolbar{background:#fff;border-color:#f0dcc2;box-shadow:none}
 </style></body></html>
