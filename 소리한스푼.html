@@ -625,7 +625,7 @@ render();
 const dipStyle=document.createElement('style');
 dipStyle.textContent=`
 .decor.dipped>.sprite:not(.dip-under){position:relative;z-index:1}
-.decor .dip-under{position:absolute;inset:0;z-index:0;filter:blur(4px);opacity:.5;pointer-events:none}
+.decor .dip-under{position:absolute;inset:0;z-index:0;filter:blur(1.5px) saturate(1.1);opacity:.8;pointer-events:none}
 .decor.dipped>.sprite:not(.dip-under){-webkit-mask-image:var(--dip-mask);mask-image:var(--dip-mask)}
 .decor.dipped>.dip-under{-webkit-mask-image:var(--dip-under-mask);mask-image:var(--dip-under-mask)}
 `;
@@ -649,7 +649,7 @@ function dipToppings(){
   const start=(rimY-top)/h*100;
   if(start>=84)return;
   const s=Math.max(0,start-4),e=Math.min(100,s+16);
-  el.style.setProperty('--dip-mask',`linear-gradient(to bottom,#000 ${s}%,rgba(0,0,0,.06) ${e}%,rgba(0,0,0,.06) 100%)`);
+  el.style.setProperty('--dip-mask',`linear-gradient(to bottom,#000 ${s}%,rgba(0,0,0,.45) ${e}%,rgba(0,0,0,.45) 100%)`);
   el.style.setProperty('--dip-under-mask',`linear-gradient(to bottom,transparent ${s}%,#000 ${e}%)`);
   const sprite=el.querySelector('.sprite:not(.dip-under)');if(!sprite)return;
   const under=sprite.cloneNode(true);under.classList.add('dip-under');el.append(under);el.classList.add('dipped');
@@ -732,10 +732,12 @@ html,body,#game{background:#fff}
 main::before,main::after,body::before{display:none!important}
 header{background:#fff;border-bottom:2px solid #efe6da}
 .stage::before,.shelf::before,.music::before{content:'';position:absolute;z-index:-1;pointer-events:none;border-radius:30px;border:2px solid;box-shadow:0 4px 16px #7a5a3a14}
-.stage::before{left:-60px;right:-60px;top:-14px;bottom:-87px;background:#fffaf3;border-color:#f0dcc2}
+.stage::before{display:none}
 .stage::after{content:'';position:absolute;left:50%;bottom:-4px;width:330px;height:28px;transform:translateX(-50%);border-radius:50%;background:radial-gradient(closest-side,#c9a98a55,#c9a98a00);pointer-events:none;z-index:-1}
 .shelf::before{left:-24px;right:-24px;top:-80px;bottom:-34px;background:#f5fbf9;border-color:#cfe6de}
 .shelf::after{content:'재료 선반';position:absolute;left:0;top:-62px;font-size:22px;color:#2f6b5e;pointer-events:none}
-.music::before{left:24px;right:24px;top:10px;bottom:8px;background:#f9f6ff;border-color:#ddd3f0}
+.music::before{left:24px;right:24px;top:10px;bottom:8px;background:#f5fbf9;border-color:#cfe6de}
+.music-heading b{color:#2f6b5e}
+.glass-reflection{opacity:.16!important}
 .editing-toolbar{background:#fff;border-color:#f0dcc2;box-shadow:none}
 </style></body></html>
