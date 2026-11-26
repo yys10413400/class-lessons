@@ -792,10 +792,31 @@ input[type=range],input[type=checkbox]{accent-color:#c98d63!important}
    and a light copy of the cup on top keeps the outline and shine without muddying the colour. */
 #cup-art{mix-blend-mode:normal!important;opacity:1!important}
 .liquid{z-index:2!important}
-.glass-front .glass-edge{mask-image:none!important;-webkit-mask-image:none!important;opacity:.4!important;mix-blend-mode:multiply;filter:grayscale(1) brightness(1.12)}
+.glass-front .glass-edge{mask-image:none!important;-webkit-mask-image:none!important;opacity:.5!important;mix-blend-mode:multiply;filter:grayscale(1) brightness(1.08)}
 .glass-front .glass-reflection{opacity:.22!important}
-/* Toppings stay in front of the glass overlay so their colours are not washed out. */
-.glass-front{z-index:4!important}
+/* Toppings below the rim sit behind the (neutral) glass overlay so they read as inside the cup. */
+.glass-front{z-index:6!important;mix-blend-mode:multiply}
+.glass-front .glass-reflection{opacity:0!important}
+.glass-front .drink-tint{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+</style><script>
+'use strict';
+// A thin layer of the drink colour over everything inside the cup, so toppings look submerged.
+(function(){
+ const ns='http://www.w3.org/2000/svg';
+ function tint(){
+  const front=document.querySelector('#drink .glass-front');if(!front)return;
+  front.querySelector('.drink-tint')?.remove();
+  if(!state.base||state.cup==='c2')return;
+  const svg=document.createElementNS(ns,'svg');svg.setAttribute('class','drink-tint');svg.setAttribute('viewBox','0 0 256 256');svg.setAttribute('aria-hidden','true');
+  const p=document.createElementNS(ns,'path');p.setAttribute('d',cupInteriors[state.cup]||cupInteriors.c0);
+  p.setAttribute('fill',byId[state.base].color);p.setAttribute('fill-opacity','.22');
+  svg.append(p);front.prepend(svg);
+ }
+ const decorateBeforeTint=decorate;
+ decorate=function(){decorateBeforeTint();tint();};
+ render();
+})();
+</script><style>
 .decor.dipped>.dip-under{opacity:.9}
 .editing-toolbar{background:#fff;border-color:#f0dcc2;box-shadow:none}
 </style></body></html>
