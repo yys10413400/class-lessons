@@ -799,8 +799,10 @@ input[type=range],input[type=checkbox]{accent-color:#c98d63!important}
 .glass-front .glass-reflection{opacity:0!important}
 .glass-front .drink-tint{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
 /* Gamja Flower handwriting font (Google Fonts); the embedded Jua stays as the offline fallback. */
-</style><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap"><style>
-/* Readable Jua for everything; the handwriting font only for the three big titles. */
+</style><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Gowun+Dodum&display=swap"><style>
+/* Gowun Dodum for readable text (embedded Jua as offline fallback); handwriting font only for the three big titles. */
+html,body,button,input,select,dialog,.toast{font-family:'Gowun Dodum',Jua,'Malgun Gothic',sans-serif!important}
+#game,dialog,.toast{-webkit-text-stroke:.25px currentColor}
 .brand-copy,.shelf::after,.music-heading b{font-family:'Gamja Flower',Jua,'Malgun Gothic',sans-serif!important;-webkit-text-stroke:.4px currentColor}
 .brand-copy{font-size:34px}.shelf::after{font-size:27px}.music-heading b{font-size:28px!important}
 .lane-name{white-space:nowrap}
