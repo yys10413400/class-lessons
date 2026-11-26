@@ -819,6 +819,13 @@ input[type=range],input[type=checkbox]{accent-color:#c98d63!important}
  // Soft pastel drink colours.
  const pastel={b0:'#fff6e6',b1:'#f9c6d6',b2:'#d2ad98',b3:'#fbe9a6',b4:'#cdeeb8',b5:'#b3e3f5',b6:'#d8c2ee',b7:'#ffd6c3'};
  for(const id in pastel)if(byId[id])byId[id].color=pastel[id];
+ // Desserts have no ice: hide that shelf tab in dessert mode.
+ const shelfBeforeNoIce=renderShelf;
+ renderShelf=function(){
+  if(state.activeKind==='dessert'&&tab==='얼음')tab=Object.keys(categories)[0];
+  shelfBeforeNoIce();
+  Array.from($('tabs').children).forEach(b=>{if(b.textContent==='얼음')b.hidden=state.activeKind==='dessert';});
+ };
  const decorateBeforeTint=decorate;
  decorate=function(){decorateBeforeTint();tint();};
  render();
