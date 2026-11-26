@@ -803,6 +803,16 @@ input[type=range],input[type=checkbox]{accent-color:#c98d63!important}
 /* Gowun Dodum for readable text (embedded Jua as offline fallback); handwriting font only for the three big titles. */
 html,body,button,input,select,dialog,.toast{font-family:'Gowun Dodum',Jua,'Malgun Gothic',sans-serif!important}
 #game,dialog,.toast{-webkit-text-stroke:.25px currentColor}
+/* Neither font has a real bold, so the browser smeared fake bold on some labels. Use one regular weight everywhere
+   and mark emphasis with a slightly heavier stroke instead. */
+#game b,#game strong,#game h2,dialog h2,dialog b,.shelf nav button.active,header .header-actions button[aria-pressed=true],.mode-bar button[aria-pressed=true]{font-weight:400!important}
+#game b,dialog h2,.shelf nav button.active,header .header-actions button[aria-pressed=true]{-webkit-text-stroke:.55px currentColor}
+.brand-copy,.shelf::after,.music-heading b{font-weight:400!important;-webkit-text-stroke:.4px currentColor!important}
+/* Dialogs match the warm cream panels. */
+dialog{background:#fff7ec!important;border:2px solid #f0d9bd!important;color:#5e4637!important}
+dialog h2{color:#9a5b33!important}dialog p{color:#6b5a4e!important}
+dialog::backdrop{background:#5a3f2a55!important}
+button:focus-visible,input:focus-visible,select:focus-visible{outline-color:#d79a6c!important}
 .brand-copy,.shelf::after,.music-heading b{font-family:'Gamja Flower',Jua,'Malgun Gothic',sans-serif!important;-webkit-text-stroke:.4px currentColor}
 .brand-copy{font-size:34px}.shelf::after{font-size:27px}.music-heading b{font-size:28px!important}
 .lane-name{white-space:nowrap}
