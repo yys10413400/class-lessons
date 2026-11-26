@@ -739,5 +739,22 @@ header{background:#fff;border-bottom:2px solid #efe6da}
 .music::before{left:24px;right:24px;top:10px;bottom:8px;background:#f5fbf9;border-color:#cfe6de}
 .music-heading b{color:#2f6b5e}
 .glass-reflection{opacity:.16!important}
+
+/* Centre the decorating area in the free space left of the shelf panel. */
+.stage{left:174px!important}.editing-toolbar{left:146px!important}#mood-summary{left:174px!important}
+
+/* Clean flat buttons instead of the painted wood plates. */
+button:not(.creation):not(.ingredient):not(.step){background:#fff!important;border:1.5px solid #d6e4e0!important;border-radius:999px!important;box-shadow:0 1px 2px #2f4a4410!important;color:#3d5a54!important;text-shadow:none!important;filter:none!important}
+button:not(.creation):not(.ingredient):not(.step):not(:disabled):hover{background:#f3f9f7!important}
+.mode-bar button[aria-pressed=true],#mode-dessert[aria-pressed=true],#mode-drink[aria-pressed=true],.shelf nav button.active,header .header-actions button[aria-pressed=true]{background:#dff2ec!important;border-color:#8fcbbb!important;color:#1f5f52!important}
+.play-controls #play{background:#dff2ec!important;border-color:#8fcbbb!important;color:#1f5f52!important}
+.play-controls #stop{background:#f1eef8!important;border-color:#c4b9df!important;color:#4c3d6b!important}
+#erase[style*="f4caa8"]{background:#fdeee2!important;border-color:#eab996!important}
+
+/* Calm sound cells: plain white circles with soft rims. */
+.step::before,.beat-step::before{background:none!important;left:50%!important;top:calc(50% - 6px)!important;width:58px;height:58px;transform:translate(-50%,-50%);border-radius:50%;background-color:#fff!important;border:2px solid #d3e6e0;inset:auto}
+.beat-step::before{border-color:#dcd6e8;background-color:#fdfcff!important}
+.step .rest{opacity:.3}
+.editing-toolbar{border-color:#d6e4e0!important}#title{border-color:#d6e4e0!important;color:#3d5a54!important}
 .editing-toolbar{background:#fff;border-color:#f0dcc2;box-shadow:none}
 </style></body></html>
