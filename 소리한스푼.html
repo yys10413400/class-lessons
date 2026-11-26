@@ -800,10 +800,9 @@ input[type=range],input[type=checkbox]{accent-color:#c98d63!important}
 .glass-front .drink-tint{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
 /* Gamja Flower handwriting font (Google Fonts); the embedded Jua stays as the offline fallback. */
 </style><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap"><style>
-html,body,button,input,select,dialog,.toast{font-family:'Gamja Flower',Jua,'Malgun Gothic',sans-serif!important}
-/* Gamja Flower draws small and thin: enlarge its glyphs and thicken the strokes a little so labels stay readable. */
-#game,dialog,.toast{font-size-adjust:.42}
-#game *,dialog *{-webkit-text-stroke:.35px currentColor}
+/* Readable Jua for everything; the handwriting font only for the three big titles. */
+.brand-copy,.shelf::after,.music-heading b{font-family:'Gamja Flower',Jua,'Malgun Gothic',sans-serif!important;-webkit-text-stroke:.4px currentColor}
+.brand-copy{font-size:34px}.shelf::after{font-size:27px}.music-heading b{font-size:28px!important}
 .lane-name{white-space:nowrap}
 .shelf-pager button{line-height:1!important;padding-bottom:4px!important}
 /* The decorating area is the star of the screen: draw it 20% larger, growing up from its base. */
